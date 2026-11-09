@@ -6,8 +6,360 @@
         <title>Salvador</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Zedaya&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet" />
 
-        
+        <style>
+            :root {
+                --bg: #faf6ef;
+                --text: #171310;
+                --gray: #6d6359;
+                --border: #e6ded2;
+                --orange: #c2571a;
+                --card: #fffdf8;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            .wrap {
+                max-width: 980px;
+                margin: 0 auto;
+                padding: 0 26px;
+            }
+
+            .hand {
+                font-family: "Zeyada", Georgia, cursive;
+                font-weight: 400;
+            }
+
+            .bar {
+                position: sticky;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 14px;
+                padding: 14px 26px;
+                background: var(--bg);
+                border-bottom: 1px solid var(--border);
+            }
+
+            .brand {
+                font-family: "Zeyada", Georgia, cursive;
+                font-size: 1.9rem;
+                line-height: 1;
+                text-decoration: none;
+                padding-top: 6px;
+            }
+
+            .bar nav {
+                display: flex;
+                gap: 20px;
+                font-size: 0.92rem;
+            }
+
+            .bar nav a {
+                color: var(--gray);
+                text-decoration: none;
+            }
+
+            .bar nav a:hover {
+                color: var(--text);
+            }
+
+            .hero {
+                padding: 80px 0 70px;
+            }
+
+            .avatar {
+                display: block;
+                width: 58px;
+                height: 58px;
+                border-radius: 50%;
+                margin-bottom: 18px;
+                border: 1px solid var(--border);
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 7rem;
+                line-height: 0.92;
+            }
+
+            h1 span {
+                color: var(--orange);
+            }
+
+            .intro {
+                margin: 6px 0 0;
+                max-width: 460px;
+                font-size: 1.1rem;
+                color: var(--gray);
+            }
+
+            .links {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 24px;
+                margin-top: 30px;
+                font-size: 0.95rem;
+            }
+
+            .btn {
+                padding: 11px 20px;
+                border-radius: 999px;
+                background: var(--text);
+                color: var(--bg);
+                text-decoration: none;
+            }
+
+            .btn:hover {
+                background: var(--orange);
+            }
+
+            .link {
+                text-decoration: none;
+                border-bottom: 1.5px solid var(--border);
+            }
+
+            .link:hover {
+                color: var(--orange);
+                border-color: var(--orange);
+            }
+
+            .section {
+                display: flex;
+                gap: 40px;
+                padding: 50px 0;
+                border-top: 1px solid var(--border);
+            }
+
+            .label {
+                width: 80px;
+                flex-shrink: 0;
+                padding-top: 6px;
+                font-family: monospace;
+                font-size: 0.75rem;
+                letter-spacing: 0.15em;
+                text-transform: uppercase;
+                color: var(--gray);
+            }
+
+            .quote {
+                margin: 0 0 16px;
+                font-family: "Zeyada", Georgia, cursive;
+                font-size: 2.3rem;
+                line-height: 1.1;
+            }
+
+            .text p {
+                margin: 0 0 14px;
+                max-width: 600px;
+                color: var(--gray);
+            }
+
+            .list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .list li + li {
+                border-top: 1px solid var(--border)
+            }
+
+            .project {
+                display: flex;
+                gap: 20px;
+                padding: 20px 2px;
+                text-decoration: none;
+            }
+
+            .project:hover {
+                background: var(--card);
+            }
+
+            .name {
+                width: 210px;
+                flex-shrink: 0;
+            }
+
+            .tech {
+                display: block;
+                margin-top: 3px;
+                font-size: 0.82rem;
+                color: var(--gray);
+            }
+
+            .desc {
+                flex: 1;
+                font-size: 0.95rem;
+                color: var(--gray);
+            }
+
+            .arrow {
+                color: var(--gray)
+            }
+
+            footer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between ;
+                gap: 8px;
+                padding: 30px 26px 42px;
+                border-top: 1px solid var(--border);
+                font-size: 0.85rem;
+                color: var(--gray);
+            }
+
+            @media (max-width: 700px) {
+                .bar {
+                    padding: 12px 18px;
+                }
+                .wrap {
+                    padding: 0 18px;
+                }
+                .hero {
+                    padding: 60px 0 50px;
+                }
+                h1 {
+                    font-size: 4.2rem;
+                }
+                .section {
+                    flex-direction: column;
+                    gap: 14px;
+                }
+                .label {
+                    width: auto;
+                }
+                .project {
+                    flex-direction: column;
+                    gap: 4px;
+                }
+                .name {
+                    width: auto;
+                }
+                .arrow {
+                    display: none;
+                }
+            }
+        </style>
     </head>
+    <body>
+
+        <header class="bar">
+            <a class="brand" href="#top">Salvador</a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+            </nav>
+        </header>
+
+        <main id="top">
+            <div class="wrap">
+
+                <section class="hero">
+                    <img class="avatar" src="https://avatars.githubusercontent.com/u/326468918?v=4" alt="Salvaddor" width="58" height="58" />
+                    <h1 class="hand">I'm Salvador<span>.</span></h1>
+                    <p class="intro">
+                        14, studying in Singapore. I code for fun and right now I am building
+                        a web game where you click your avatar to get speed and challenge NPCs.
+                    </p>
+                    <div class="links">
+                        <a class="btn" href="#projects">See what I have made</a>
+                        <a class="link" href="https://github.com/sparklydinosaur310-design" target="_blank">Github ↗</a>
+                    </div>
+                </section>
+
+                <section class="section" id="about">
+                    <span class="label">About</span>
+                    <div class="text">
+                        <p class="quote">This started with a Youtube tutorial.</p>
+                        <p>
+                            I am 14 and I am studying in Singapore. I learned to code by following a Youtube
+                            tutuorial on how to make a simple game in Godot. When I finished that project, I
+                            wanted to keep going. I started trying new things that the tutorial never taught me.
+                        </p>
+                        <p>
+                            I like to code for fun and I like learning new ways to create items while coding.
+                            I am still new to coding and some of my bugs take longer than they should for me
+                            to fix, but I don't give up when my code doesn't work.
+                        </p>
+                    </div>
+                </section>
+
+                <section class="section" id="projects">
+                    <span class="label">Projects</span>
+                    <div class="text">
+                        <ul class="list">
+                            <li>
+                                <a class="project" href="https://github.com/sparklydinosaur310-design/speedclicker" target="_blank">
+                                    <span class="name">
+                                        <strong>Speedclicker</strong>
+                                        <span class="tech">JavaScript</span>
+                                    </span>
+                                    <span class="desc">A web game where you click to get speed. This project is in progress</span>
+                                    <span class="arror">↗</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="projcet" href="https://github.com/sparklydinosaur310-design/My-cool-game" target="_blank">
+                                    <span class="name">
+                                        <strong>My-cool-game</strong>
+                                        <span class="tech">Godot · GDScript</span>
+                                    </span>
+                                    <span class="desc">My first 2D game. This project taught me how to use Godot.</span>
+                                    <span class="arrow">↗</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="project" href="https://github.com/sparklydinosaur310-design/Jukebox" target="_blank">
+                                    <span class="name">
+                                        <strong>Jukebox</strong>
+                                        <span class="texh">JavaScript</span>
+                                    </span>
+                                    <span class="desc">A small browser project I made.</span>
+                                    <span class="arrow">↗</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <p>
+                            <a class="link" href="https://github.com/sparklydinosaur310-design" target="_blank">Everything else is on Github ↗</a>
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <span>© <span id="year">2026</span> Salvador</span>
+            <span>Made for fun.</span>
+        </footer>
+
+        <script>
+            const year = document.getElementById("year");
+            year.textContent = new Date().getFullYear();
+        </script>
+
+    </body>
 </html>
