@@ -5,7 +5,7 @@ Hi guys, this is my personal site where you can learn more about me
 <img width="953" height="437" alt="Screenshot 2026-11-09 135619" src="https://github.com/user-attachments/assets/822fbc12-83e1-48c0-83e2-ae9fce68810c" />
 
 ## How to test the site
-- use this link →
+- use this link → https://sparklydinosaur310-design.github.io/Personal-web/
 
 ## This site includes
 - a short intro about me
