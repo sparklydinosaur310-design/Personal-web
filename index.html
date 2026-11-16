@@ -310,6 +310,26 @@
                 color: var(--bg);
             }
 
+            .glow {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 320px;
+                height: 320px;
+                margin: -160px 0 0 -160px;
+                border-radius: 50%;
+                background: radial-gradient(circle, var(--orange) 0%, transparent 70%);
+                opacity: 0.15;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            @media (hover: none) {
+                .glow {
+                    display: none;
+                }
+            }
+
             footer {
                 display: flex;
                 flex-wrap: wrap;
@@ -355,6 +375,8 @@
         </style>
     </head>
     <body>
+
+        <div class="glow" id="glow"></div>
 
         <header class="bar">
             <a class="brand" href="#top">Salvador</a>
@@ -539,6 +561,26 @@
             toTop.addEventListener("click", function () {
                 window.scrollTo({ top: 0, behavior: "smooth" });
             });
+
+            const glow = document.getElementById("glow");
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let glowX = mouseX;
+            let glowY = mouseY;
+
+            window.addEventListener("mousemove", function (e) {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function moveGlow() {
+                glowX += (mouseX - glowX) * 0.12;
+                glowY += (mouseY - glowY) * 0.12;
+                glow.style.transform = "translate(" + glowX + "px, " + glowY + "px)";
+                requestAnimationFrame(moveGlow);
+            }
+
+            moveGlow();
         </script>
 
     </body>
