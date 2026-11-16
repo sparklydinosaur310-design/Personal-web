@@ -355,7 +355,7 @@
                 <section class="section fade" id="about">
                     <span class="label">About</span>
                     <div class="text">
-                        <p class="quote">This started with a Youtube tutorial.</p>
+                        <p class="quote typing">This started with a Youtube tutorial.</p>
                         <p>
                             I am 14 and I am studying in Singapore. I learned to code by following a Youtube
                             tutorial on how to make a simple game in Godot. When I finished that project, I
@@ -412,7 +412,7 @@
                 <section class="section fade" id="facts">
                     <span class="label">Facts</span>
                     <div class="text">
-                        <p class="quote">A few things about me.</p>
+                        <p class="quote typing">A few things about me.</p>
                         <ul class="facts">
                             <li>I am 14 and I live in Singapore.</li>
                             <li>My first game was made in Godot by following a YouTube tutorial.</li>
@@ -462,6 +462,40 @@
             
             fadeItems.forEach(function (item) {
                 observer.observe(item);
+            });
+
+            const typeItems = document.querySelectorAll(".typing");
+
+            typeItems.forEach(function (el) {
+                const text = el.textContent;
+                el.textContent = "";
+                text.split("").forEach(function (letter) {
+                    const span = document.createElement("span");
+                    span.textContent = letter;
+                    span.style.visibility = "hidden";
+                    el.appendChild(span);
+                });
+            });
+
+            const typeObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    const letters = entry.target.querySelectorAll("span");
+                    let i = 0;
+                    const timer = setInterval(function () {
+                        if (i >= letters.length) {
+                            clearInterval(timer);
+                            return;
+                        }
+                        letters[i].style.visibility = "visible";
+                        i++;
+                    }, 60);
+                    typeObserver.unobserve(entry.target);
+                });
+            }, { threshold: 0.6 });
+
+            typeItems.forEach(function (item) {
+                typeObserver.observe(item);
             });
         </script>
 
