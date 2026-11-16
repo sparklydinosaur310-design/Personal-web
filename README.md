@@ -19,3 +19,16 @@ this site has has one index.html file with html and css only. this site uses a h
 ## some problems i had while i was building it
 - i spelled the font name wrong (Zedaya instead of Zeyada) and the font didn't load
 - `hover` didn't work because i misspelled it as `.projct:hover`
+
+## How to run locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com
+   ```
+2. **Open the folder**
+   ```bash
+   cd Personal-web
+   ```
+3. **View the site**
+4.Double click `index.html` to open it.
