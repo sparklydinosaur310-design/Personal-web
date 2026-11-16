@@ -280,6 +280,36 @@
                 transform: none;
             }
 
+            .to-top {
+                position: fixed;
+                right: 22px;
+                bottom: 22px;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                border: 1pox solid var(--border);
+                background: var(--card);
+                color: var(--text);
+                font-size: 1.2rem;
+                cursor: pointer;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(10px);
+                transition: opacity 0.3s ease, transform 0.3 ease;
+            }
+
+            .to-top.visible {
+                opacity: 1;
+                pointer-events: auto;
+                transform: none;
+            }
+
+            .to-top:hover {
+                background: var(--orange);
+                border-color: var(--orange);
+                color: var(--bg);
+            }
+
             footer {
                 display: flex;
                 flex-wrap: wrap;
@@ -429,6 +459,8 @@
             <span>Made for fun.</span>
         </footer>
 
+        <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
+
         <script>
             const year = document.getElementById("year");
             year.textContent = new Date().getFullYear();
@@ -496,6 +528,16 @@
 
             typeItems.forEach(function (item) {
                 typeObserver.observe(item);
+            });
+
+            const toTop = document.getElementById("to-top");
+
+            window.addEventListener("scroll", function () {
+                toTop.classList.toggle("visible", window.scrollY > 400);
+            });
+
+            toTop.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
             });
         </script>
 
