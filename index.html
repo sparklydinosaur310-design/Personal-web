@@ -35,6 +35,10 @@
                 scroll-behavior: smooth;
             }
 
+            .section {
+                scroll-margin-top: 70px;
+            }
+
             body {
                 margin: 0;
                 background: var(--bg);
@@ -244,6 +248,27 @@
                 color: var(--gray)
             }
 
+            .facts {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .facts li {
+                padding: 12px 0;
+                max-width: 600px;
+                color: var(--gray);
+            }
+
+            .facts li + li {
+                border-top: 1px solid var(--border);
+            }
+
+            .facts li::before {
+                content: "→ ";
+                color: var(--orange);
+            }
+
             footer {
                 display: flex;
                 flex-wrap: wrap;
@@ -295,6 +320,7 @@
             <nav>
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
+                <a href="#facts">Fun Facts</a>
                 <button class="theme-btn" id="theme-toggle" type="button">Dark</button>
             </nav>
         </header>
@@ -372,7 +398,18 @@
                         </p>
                     </div>
                 </section>
-
+                <section class="section" id="facts">
+                    <span class="label">Facts</span>
+                    <div class="text">
+                        <p class="quote">A few things about me.</p>
+                        <ul class="facts">
+                            <li>I am 14 and I live in Singapore.</li>
+                            <li>My first game was made in Godot by following a YouTube tutorial.</li>
+                            <li>I never give up when my code has a bug, even if it takes a long time to fix.</li>
+                            <li>My most recent project was a web based game where you click your avatar to get speed and challenge NPCs for rewards.</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </main>
 
