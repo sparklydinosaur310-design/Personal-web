@@ -31,4 +31,4 @@ this site has has one index.html file with html and css only. this site uses a h
    cd Personal-web
    ```
 3. **View the site**
-4.Double click `index.html` to open it.
+   Double click `index.html` to open it.
